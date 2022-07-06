@@ -16,6 +16,22 @@ mixin _$LoginViewModel on _LoginViewModel, Store {
           Computed<bool>(() => super.valid, name: '_LoginViewModel.valid'))
       .value;
 
+  late final _$loginStateAtom =
+      Atom(name: '_LoginViewModel.loginState', context: context);
+
+  @override
+  ButtonState get loginState {
+    _$loginStateAtom.reportRead();
+    return super.loginState;
+  }
+
+  @override
+  set loginState(ButtonState value) {
+    _$loginStateAtom.reportWrite(value, super.loginState, () {
+      super.loginState = value;
+    });
+  }
+
   late final _$emailValidAtom =
       Atom(name: '_LoginViewModel.emailValid', context: context);
 
@@ -106,8 +122,20 @@ mixin _$LoginViewModel on _LoginViewModel, Store {
   }
 
   @override
+  void onLoginClick() {
+    final _$actionInfo = _$_LoginViewModelActionController.startAction(
+        name: '_LoginViewModel.onLoginClick');
+    try {
+      return super.onLoginClick();
+    } finally {
+      _$_LoginViewModelActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
+loginState: ${loginState},
 emailValid: ${emailValid},
 passwordValid: ${passwordValid},
 email: ${email},

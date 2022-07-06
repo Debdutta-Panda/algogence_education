@@ -23,13 +23,14 @@ abstract class _SplashViewModel with Store {
 
   void splashAction() async {
     await Future.delayed(Duration(seconds: 3));
-    var user_id = appSettings.userId;
+    /*var user_id = appSettings.userId;
     if(user_id==null || user_id == ""){
       goToLoginPage();
     }
     else{
       goToHomePage();
-    }
+    }*/
+    goToHomePage();
   }
 
   void goToLoginPage() {

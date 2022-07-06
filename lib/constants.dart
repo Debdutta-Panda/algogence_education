@@ -1,5 +1,5 @@
 class Constants{
-  static const app_name = "Education AlgoGence";
+  static const app_name = "AlgoGence Education";
   static const app_full_name = "Infrastructure Management and DevOps";
   static const splash_duration = 2;
 
