@@ -82,5 +82,4 @@ flutter:
           weight: 300
   assets:
     - assets/animations/splash_animation.json
-    - assets/images/app_logo.svg
-    - assets/images/algogence_logo.svg
+    - assets/images/

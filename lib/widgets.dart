@@ -100,6 +100,12 @@ SpaceY24() {
   );
 }
 
+SpaceY100() {
+  return SizedBox(
+    height: 100,
+  );
+}
+
 SpaceY12() {
   return SizedBox(
     height: 12,
