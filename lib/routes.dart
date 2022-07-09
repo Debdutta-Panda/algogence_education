@@ -6,4 +6,5 @@ class Routes{
   static const home_home = "home/home";
   static const home_courses = "home/courses";
   static const home_login_signup = "home/login_signup";
+  static const course = "course";
 }

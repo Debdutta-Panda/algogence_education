@@ -34,10 +34,10 @@ abstract class _SplashViewModel with Store {
   }
 
   void goToLoginPage() {
-    navigationService.navigateTo(Routes.login);
+    navigationService.popNavigateTo(Routes.login);
   }
 
   void goToHomePage() {
-    navigationService.navigateTo(Routes.home);
+    navigationService.popNavigateTo(Routes.home);
   }
 }

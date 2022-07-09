@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../CoursesPage.dart';
+import 'CoursesPage.dart';
 import '../image_assets.dart';
 import '../navigation.dart';
 import '../routes.dart';

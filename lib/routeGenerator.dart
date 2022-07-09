@@ -1,3 +1,5 @@
+import 'package:algogence_education/pages/CoursesPage.dart';
+import 'package:algogence_education/pages/course.dart';
 import 'package:algogence_education/pages/home_page.dart';
 import 'package:algogence_education/routes.dart';
 import 'package:algogence_education/pages/splash_page.dart';
@@ -8,11 +10,14 @@ import 'pages/login_page.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings routeSettings) {
+    var arguments = routeSettings.arguments;
     switch (routeSettings.name) {
       case Routes.splash:
         return MaterialPageRoute(builder: (_) => const SplashPage());
       case Routes.home:
         return MaterialPageRoute(builder: (_) => const HomePage());
+      case Routes.course:
+        return MaterialPageRoute(builder: (_) => CoursePage(arguments as String));
       case Routes.login:
         return PageTransition(
             child: LoginPage(),
