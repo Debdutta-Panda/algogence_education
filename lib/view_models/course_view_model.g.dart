@@ -9,6 +9,22 @@ part of 'course_view_model.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic, no_leading_underscores_for_local_identifiers
 
 mixin _$CourseViewModel on _CourseViewModel, Store {
+  late final _$contentStateAtom =
+      Atom(name: '_CourseViewModel.contentState', context: context);
+
+  @override
+  DataState get contentState {
+    _$contentStateAtom.reportRead();
+    return super.contentState;
+  }
+
+  @override
+  set contentState(DataState value) {
+    _$contentStateAtom.reportWrite(value, super.contentState, () {
+      super.contentState = value;
+    });
+  }
+
   late final _$_CourseViewModelActionController =
       ActionController(name: '_CourseViewModel', context: context);
 
@@ -24,9 +40,20 @@ mixin _$CourseViewModel on _CourseViewModel, Store {
   }
 
   @override
+  dynamic onInit(String id) {
+    final _$actionInfo = _$_CourseViewModelActionController.startAction(
+        name: '_CourseViewModel.onInit');
+    try {
+      return super.onInit(id);
+    } finally {
+      _$_CourseViewModelActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
-
+contentState: ${contentState}
     ''';
   }
 }

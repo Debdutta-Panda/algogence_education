@@ -68,7 +68,7 @@ class _CoursesPageState extends State<CoursesPage> {
                             Text(
                               "Take this course if and only if you are really serious about your Android Application Development career or want to create some awesome app. You need to do hard work along with the course guidelines. Good thing come only by hard work and proper guidance.",
                               overflow: TextOverflow.ellipsis,
-                              maxLines: 6,
+                              maxLines: 3,
                               style: TextStyle(
                                   fontSize: 20,
                                 height: 2.5
